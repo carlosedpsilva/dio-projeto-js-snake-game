@@ -27,10 +27,10 @@ function startGame() {
   let snakeX = snake[0].x;
   let snakeY = snake[0].y;
 
-  if (direction == "right") snakeX += box;
-  else if (direction == "left") snakeX -= box;
-  else if (direction == "up") snakeY += box;
-  else if (direction == "down") snakeY -= box;
+  if (direction == "left") snakeX -= box;
+  else if (direction == "up") snakeY -= box;
+  else if (direction == "right") snakeX += box;
+  else if (direction == "down") snakeY += box;
 
   let newHead = {
     x: snakeX,
