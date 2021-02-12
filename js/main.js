@@ -3,20 +3,20 @@ let context = canvas.getContext("2d");
 let box = 32;
 let snake = [];
 snake[0] = {
-  x: 8 * box,
-  y: 8 * box
+  x: 7 * box,
+  y: 7 * box
 };
 let direction = "";
 
 function createBG() {
   context.fillStyle = "lightgreen";
-  context.fillRect(0, 0, 16 * (box + 1), 16 * (box + 1));
+  context.fillRect(0, 0, 16 * box , 16 * box);
 }
 
 function createSnake() {
   for(let i=0; i < snake.length; i++) {
     context.fillStyle = "green";
-    context.fillRect(snake[i].x, snake[i].y, box + 1, box + 1);
+    context.fillRect(snake[i].x, snake[i].y, box, box);
   }
 }
 
@@ -34,9 +34,9 @@ function startGame() {
   createSnake();
 
   if (snake[0].x > 15 * box) snake[0].x = 0;
-  if (snake[0].x < 0 * box) snake[0].x = 16 * box;
+  if (snake[0].x < 0 * box) snake[0].x = 15 * box;
   if (snake[0].y > 15 * box) snake[0].y = 0;
-  if (snake[0].y < 0 * box) snake[0].y = 16 * box;
+  if (snake[0].y < 0 * box) snake[0].y = 15 * box;
 
   console.log("x = " + snake[0].x);
   console.log("y = " + snake[0].y);
